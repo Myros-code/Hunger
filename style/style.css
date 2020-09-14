@@ -1,4 +1,25 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Banny;
+  src: url(../fonts/Banny-BoldRound.otf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -422,7 +443,6 @@ html {
   font-weight: bold;
   font-size: 12px;
   line-height: 12px;
-  /* or 100% */
   text-align: center;
   color: #FFFFFF;
 }
@@ -723,6 +743,7 @@ html {
 }
 
 .product__item {
+  list-style: none;
   max-width: 365px;
   font-family: Banny, sans-serif;
   font-size: 18px;
@@ -804,38 +825,27 @@ p {
 }
 
 .images__block__sm {
-  width: 100%;
+  overflow: hidden;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .section-img__container--sm {
-  border-right: 0;
   overflow: hidden;
   width: 25%;
-  height: 377px;
-}
-
-.section-img__container--sm:nth-child(3) {
-  width: 25.4%;
+  height: 375px;
 }
 
 .section-img__container--sm .galery-img {
-  border: 1px solid #575757;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
-  -moz-transition: all .7s ease-out;
-  -o-transition: all .7s ease-out;
-  -webkit-transition: all .7s ease-out;
-}
-
-.section-img__container--sm .galery-img:hover {
-  border: 1px solid #575757;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -o-transform: scale(1.2);
 }
 
 .contact__section .section-content__container {
@@ -1120,9 +1130,8 @@ img.wheel {
   }
   .section-img__container--sm .galery-img {
     width: 100%;
-    -moz-transition: all .5s ease-out;
-    -o-transition: all .5s ease-out;
     -webkit-transition: all .5s ease-out;
+    transition: all .5s ease-out;
   }
   .booking__textarea {
     width: 97%;
@@ -1511,8 +1520,7 @@ img.wheel {
   }
   .galery-img:hover {
     -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -o-transform: scale(0);
+            transform: scale(0);
   }
 }
 
