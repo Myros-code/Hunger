@@ -160,7 +160,7 @@ sans-serif;
 
 // HEADER STYLES START
 .header {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/photos/header-bg.jpg);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/photos/header-bg.webp);
     background-size: cover;
 }
 
@@ -563,7 +563,7 @@ sans-serif;
 
 // OUR TEAM SECTION
 .our-team__section {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/photos/specialtys-bg.jpg) no-repeat;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/photos/specialtys-bg.webp) no-repeat;
     background-size: cover;
 }
 
@@ -625,7 +625,7 @@ sans-serif;
 //SPECIALITIES SECTION
 .specialties__section {
     color: $primary-color;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/photos/specialtys2-bg.jpg) no-repeat;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/photos/specialtys2-bg.webp) no-repeat;
     background-size: cover;
 
 
@@ -689,7 +689,7 @@ sans-serif;
 }
 
 .menu__item {
-
+    transition: 0.3s linear all;
     padding: 20px 40px;
     font-family: $desc-font;
     font-style: normal;
@@ -701,6 +701,12 @@ sans-serif;
     align-items: center;
     text-align: center;
     border: 1px solid rgba(51, 51, 51, 0.2);
+    &:hover{
+        box-shadow: 0 0 20px 1px rgba(163, 163, 163, 0.685), 0 0 20px 1px rgba(163, 163, 163, 0.685);
+    }
+    &:active{
+        background-color: rgb(129, 129, 129);
+    }
 }
 
 .prise-list__container {
@@ -745,7 +751,7 @@ p {
 
 //GALERY SECTION
 .galery__section {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/photos/specialtys2-bg.jpg) no-repeat;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/photos/specialtys2-bg.webp) no-repeat;
     background-size: cover;
 
     .worktime-info__desc {
@@ -753,7 +759,7 @@ p {
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
-        line-height: 12px;
+        line-height: 8px;
         /* or 100% */
         color: rgba(255, 255, 255, 0.5);
 
@@ -921,7 +927,7 @@ p {
 .footer-chart {
     width: 100%;
     height: 475px;
-    background: url(../img/photos/mapsdirectionspart1-56cd4d395f9b5879cc5bd51a.png);
+    background: url(../img/photos/ctionspart1-56cd4d395f9b5879cc5bd51a.webp);
     background-size: cover;
 }
 
@@ -952,6 +958,32 @@ p {
 }
 
 // hover, onclick styles
+.our-team__section , .specialties__section , .galery__section {
+    position: relative;
+    &::before{
+        @extend %border;
+         width: 710px;
+        top: 345px;
+        left: -55px;
+
+    }
+    &::after{
+        @extend %border;
+        width: 710px;
+        top: 345px;
+        right: -55px;
+    }
+    .black-section__subtitle{
+        position: relative;
+        &::before{
+            @extend %border;
+            width: 710px;
+            top: 345px;
+            left: 23.5%;
+
+        }
+    }
+}
 
 .socialnetworks__container {
     svg {
@@ -1148,6 +1180,14 @@ img.wheel {
     .wrapper {
         width: 90.8%;
     }
+    .our-team__section , .specialties__section , .galery__section {
+        &::before , &::after{
+            display: none;
+        }
+        .black-section__subtitle::before{
+            display: none;
+        }
+    }
 
 }
 
@@ -1219,7 +1259,6 @@ img.wheel {
             left: 37%;
             position: absolute;
         }
-
     }
 
     .booking__section .section-content__container.section-white {
@@ -1327,6 +1366,7 @@ img.wheel {
     .down-btn::after {
         display: none;
     }
+    
 
     .booking__button {
         font-size: 20px;
